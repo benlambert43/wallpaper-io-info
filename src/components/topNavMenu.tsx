@@ -32,21 +32,21 @@ const TopNavBar = () => {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
+    <AppBar position='static'>
+      <Container maxWidth='xl'>
         <Toolbar disableGutters>
           <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
             <StaticImage
-              alt="Wallpaper io logo hero image"
-              src="../images/icon.png"
+              alt='Wallpaper io logo hero image'
+              src='../images/icon.png'
               height={32}
               width={32}
             />
           </Box>
           <Typography
             noWrap
-            component="a"
-            href="/"
+            component='a'
+            href='/'
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -60,17 +60,17 @@ const TopNavBar = () => {
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
-              size="large"
-              aria-label="menu"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
+              size='large'
+              aria-label='menu'
+              aria-controls='menu-appbar'
+              aria-haspopup='true'
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color='inherit'
             >
               <MenuIcon />
             </IconButton>
             <Menu
-              id="menu-appbar"
+              id='menu-appbar'
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: 'bottom',
@@ -95,8 +95,8 @@ const TopNavBar = () => {
                     style={{
                       color: 'gray',
                       textDecoration: 'none',
-                      paddingLeft: 50,
-                      paddingRight: 50,
+                      paddingLeft: 25,
+                      paddingRight: 25,
                     }}
                     activeStyle={{ color: colors.orange1 }}
                   >
@@ -109,17 +109,17 @@ const TopNavBar = () => {
 
           <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}>
             <StaticImage
-              alt="Wallpaper io logo hero image"
-              src="../images/icon.png"
+              alt='Wallpaper io logo hero image'
+              src='../images/icon.png'
               height={24}
               width={24}
             />
           </Box>
           <Typography
-            variant="h5"
+            variant='h5'
             noWrap
-            component="a"
-            href=""
+            component='a'
+            href=''
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
