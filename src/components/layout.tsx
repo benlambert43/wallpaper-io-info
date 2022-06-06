@@ -42,7 +42,12 @@ const Layout = ({ pageTitle, children }: LayoutProps) => {
         <AppBar position="static" style={{ backgroundColor: colors.blue3 }}>
           <Container maxWidth="xl">
             <Toolbar disableGutters>
-              <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
+              <Box
+                sx={{ flexGrow: 0, display: 'flex', alignItems: 'center', cursor: 'pointer' }}
+                onClick={() => {
+                  navigate('/');
+                }}
+              >
                 <Avatar>
                   <StaticImage alt="Wallpaper io logo hero image" src="../images/icon.png" />
                 </Avatar>
@@ -67,7 +72,6 @@ const Layout = ({ pageTitle, children }: LayoutProps) => {
                 </div>
                 <div
                   style={{
-                    marginRight: 30,
                     padding: 10,
                   }}
                 >
@@ -77,6 +81,33 @@ const Layout = ({ pageTitle, children }: LayoutProps) => {
                     activeStyle={{ color: colors.orange1 }}
                   >
                     <Typography fontWeight={'bold'}>About</Typography>
+                  </Link>
+                </div>
+                <div
+                  style={{
+                    padding: 10,
+                  }}
+                >
+                  <Link
+                    to="/contact"
+                    style={{ color: 'white', textDecoration: 'none' }}
+                    activeStyle={{ color: colors.orange1 }}
+                  >
+                    <Typography fontWeight={'bold'}>Contact</Typography>
+                  </Link>
+                </div>
+                <div
+                  style={{
+                    marginRight: 30,
+                    padding: 10,
+                  }}
+                >
+                  <Link
+                    to="/privacy"
+                    style={{ color: 'white', textDecoration: 'none' }}
+                    activeStyle={{ color: colors.orange1 }}
+                  >
+                    <Typography fontWeight={'bold'}>Privacy</Typography>
                   </Link>
                 </div>
               </Box>
