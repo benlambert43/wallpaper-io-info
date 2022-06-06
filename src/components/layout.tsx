@@ -85,8 +85,10 @@ const Layout = ({ pageTitle, children }: LayoutProps) => {
         </AppBar>
       </nav>
       <main>
-        <h1>{pageTitle}</h1>
-        {children}
+        <div style={{ padding: '5vw' }}>
+          <Typography>{pageTitle}</Typography>
+          {children}
+        </div>
       </main>
     </div>
   );
