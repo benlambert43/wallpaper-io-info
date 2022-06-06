@@ -5,7 +5,7 @@ import { Typography } from '@mui/material';
 
 const ContactPage = () => {
   return (
-    <Layout pageTitle="Contact Page">
+    <Layout pageTitle='Contact Us'>
       <Typography>This is my contact page.</Typography>
     </Layout>
   );

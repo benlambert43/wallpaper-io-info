@@ -42,7 +42,9 @@ const Layout = ({ pageTitle, children }: LayoutProps) => {
       </nav>
       <main>
         <div style={{ padding: '5vw' }}>
-          <Typography>{pageTitle}</Typography>
+          <Box style={{ paddingTop: 5, paddingBottom: 5 }}>
+            <Typography variant='h5'>{pageTitle}</Typography>
+          </Box>
           {children}
         </div>
       </main>
