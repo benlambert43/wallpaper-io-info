@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { navigate, useStaticQuery, graphql } from 'gatsby';
+import { navigate, useStaticQuery, graphql, Link } from 'gatsby';
 import Button from '@mui/material/Button';
 import {
   AppBar,
@@ -11,13 +11,14 @@ import {
   Menu,
   Toolbar,
   Tooltip,
+  Typography,
 } from '@mui/material';
 import { StaticImage } from 'gatsby-plugin-image';
 import colors from '../../ColorTheme';
 
 type LayoutProps = {
   pageTitle: string;
-  children: JSX.Element[];
+  children: JSX.Element | JSX.Element[];
 };
 
 const Layout = ({ pageTitle, children }: LayoutProps) => {
@@ -41,39 +42,42 @@ const Layout = ({ pageTitle, children }: LayoutProps) => {
         <AppBar position="static" style={{ backgroundColor: colors.blue3 }}>
           <Container maxWidth="xl">
             <Toolbar disableGutters>
-              <Box sx={{ flexGrow: 0 }}>
+              <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
                 <Avatar>
                   <StaticImage alt="Wallpaper io logo hero image" src="../images/icon.png" />
                 </Avatar>
+                <Typography style={{ marginLeft: 15, fontWeight: 'lighter' }}>
+                  Wallpaper.io
+                </Typography>
               </Box>
               <Box sx={{ flexGrow: 1, display: 'flex' }}>
                 <div
                   style={{
-                    padding: 10,
                     marginLeft: 30,
+                    padding: 10,
                   }}
                 >
-                  <Button
-                    name="Home"
-                    style={{ paddingLeft: 20, paddingRight: 20, color: 'white' }}
-                    onClick={() => {
-                      navigate('/');
-                    }}
+                  <Link
+                    to="/"
+                    style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}
+                    activeStyle={{ color: colors.orange1 }}
                   >
-                    Home
-                  </Button>
+                    <Typography fontWeight={'bold'}>Home</Typography>
+                  </Link>
                 </div>
                 <div
                   style={{
+                    marginRight: 30,
                     padding: 10,
                   }}
                 >
-                  <Button
-                    name="About"
-                    style={{ paddingLeft: 20, paddingRight: 20, color: 'white' }}
+                  <Link
+                    to="/about"
+                    style={{ color: 'white', textDecoration: 'none' }}
+                    activeStyle={{ color: colors.orange1 }}
                   >
-                    About
-                  </Button>
+                    <Typography fontWeight={'bold'}>About</Typography>
+                  </Link>
                 </div>
               </Box>
             </Toolbar>
