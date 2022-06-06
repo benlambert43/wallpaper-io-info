@@ -14,6 +14,8 @@ import {
   Typography,
 } from '@mui/material';
 import TopNavBar from './topNavMenu';
+import { StaticImage } from 'gatsby-plugin-image';
+import colors from '../../ColorTheme';
 
 type LayoutProps = {
   pageTitle: string;
@@ -41,11 +43,37 @@ const Layout = ({ pageTitle, children }: LayoutProps) => {
         <TopNavBar />
       </nav>
       <main>
-        <div style={{ padding: '5vw' }}>
-          <Box style={{ paddingTop: 5, paddingBottom: 5 }}>
-            <Typography variant='h5'>{pageTitle}</Typography>
+        <div>
+          <Box>
+            <Box
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                flex: 1,
+                justifyContent: 'flex-end',
+                alignItems: 'center',
+                marginBottom: 20,
+                marginRight: '2vw',
+                marginTop: '1vh',
+                marginLeft: '1vw',
+              }}
+            >
+              <Box style={{ paddingRight: 5 }}>
+                <Avatar>
+                  <StaticImage alt='Wallpaper io logo hero image' src='../images/icon.png' />
+                </Avatar>
+              </Box>
+              <Box style={{ paddingLeft: 5 }}>
+                <Typography color={colors.blue1} fontWeight={'light'}>
+                  wallpaper.io
+                </Typography>
+              </Box>
+            </Box>
+            <div style={{ padding: '2vw' }}>
+              <Typography variant='h4'>{pageTitle}</Typography>
+              {children}
+            </div>
           </Box>
-          {children}
         </div>
       </main>
     </div>
